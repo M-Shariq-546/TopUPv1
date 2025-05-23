@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+{% include 'base/navbar.html' %}
+
+  <div class="categories-container web_size">
+    <h1>{{ category }}'s Sub-Category</h1>
+    <div class="main-wrapper">
+        {% for subcategory in subcategories %}
+        <div class="product-card">
+            <div class="product-type">
+                <h4>{{ subcategory.name }}</h4>
+                <p>{{ subcategory.description }}</p>
+                <a href="{% url 'products-list' subcategory.id %}">
+                <button class="secondary">See All Products</button></a>
+            </div>
+            <div class="category-img">{% if subcategory.image %}<img src="{{ subcategory.image.url }}" alt="microsoft">{% else %}{% endif %}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+{% include 'base/footer.html' %}
+{% endblock content %} 

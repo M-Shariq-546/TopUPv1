@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+ <!-- Services-->
+    <div class="services-container">
+        <div class="services">
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/cart.svg' %}" alt="cart"></div>
+                <span>The store offers the widest range of products.</span>
+            </div>
+
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/search_more.svg' %}" alt="search"></div>
+                <span>You spend a minimum of time and effort on finding a key</span>
+            </div>
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/low-price.svg' %}" alt="price"></div>
+                <span>Our prices allow you to save a significant part of your funds.</span>
+            </div>
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/time.svg' %}" alt="time"></div>
+                <span>You receive the purchased key instantly, without any waiting.</span>
+            </div>
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/payment.svg' %}" alt="payment"></div>
+                <span>Multiple payment methods. Now even more accessible</span>
+            </div>
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/voucher.svg' %}" alt="voucher"></div>
+                <span>Automatic discounts for regular customers</span>
+            </div>
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/online-support.svg' %}" alt="online-support"></div>
+                <span>We have fast, polite and competent technical support</span>
+            </div>
+            <div class="listing">
+                <div class="service-icon"><img src="{% static 'assets/icons/gurantee.svg' %}" alt="gaurantee"></div>
+                <span>Absolutely all products are guaranteed.</span>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}

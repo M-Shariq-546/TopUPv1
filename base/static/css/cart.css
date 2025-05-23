@@ -1,0 +1,117 @@
+/* Cart Dropdown */
+.cart-dropdown-wrapper {
+    position: relative;
+}
+
+.cart-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.cart-dropdown.hidden {
+    display: none;
+}
+
+.cart-container{
+    height: auto;
+    border-radius: 11px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 16px;
+}
+.item-img{
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background-color: #ccc;
+}
+.item-details {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  .item-title {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+    line-height: 1.2;
+  }
+  .item-price {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 4px 0 0;
+    color: #000;
+  }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    color: #B5B5B5;
+    font-size: 13px;
+    cursor: pointer;
+    padding-left: 10px;
+    margin-top: 28px;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+  }
+
+  .cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .cart-summary .total-summary{
+    display: flex;
+    align-items: center;
+  }
+  
+  .total-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .clear-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: #B5B5B5;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .checkout-btn {
+    width: 100%;
+    background-color: #FD7C07;
+    color: white;
+    border: none;
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }

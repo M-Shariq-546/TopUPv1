@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Cart dropdown Toggle-->
+                            <div class="cart-container cart-dropdown hidden" id="cart-dropdown">
+                                <div class="cart-items">
+                                    <div class="cart-item">
+                                        <div class="item-img">
+                                        </div>
+                                        <div class="item-details">
+                                            <p class="item-title">Windows 10 Professional EN x32/x64</p>
+                                            <p class="item-price">418.20 $</p>  
+                                        </div>
+                                        <button class="remove-btn">Remove</button>
+                                    </div>
+                        
+                                    <div class="cart-item">
+                                        <div class="item-img">
+                                        </div>
+                                        <div class="item-details">
+                                            <p class="item-title">Windows 10 Professional EN x32/x64</p>
+                                            <p class="item-price">418.20 $</p>  
+                                        </div>
+                                        <button class="remove-btn">Remove</button>
+                                    </div>
+                        
+                                </div>
+                                <hr>
+                                <div class="cart-summary">
+                                    <div class="total-summary">
+                                        <span class="total-label">Total:</span>
+                                        <span class="total-price">18.12 $</span>
+                                    </div>
+                                    <button class="clear-btn">Clear Cart</button> 
+                                </div>
+                                <button class="checkout-btn">Checkout</button>
+                        
+                            </div>
+{% endblock content %}

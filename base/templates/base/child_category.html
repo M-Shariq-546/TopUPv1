@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<!--Product Categories-->
+
+
+    {% include 'base/navbar.html'%}
+
+    {% include 'base/hero.html' %} 
+
+    <div class="categories-container">
+        <h1>Product Categories</h1>
+        <div class="main-wrapper">
+            {% for category in child_categories %}
+            <div class="product-card">
+                <div class="product-type">
+                    <h4>{{ category.name }}</h4>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod</p>
+
+                    {% if category.parent_category_key.all %}
+                        <a href="{% url 'child_categories' category.id %}">
+                        <button class="secondary">See All Child Categories</button></a>
+                    {% else %}
+                        <a href="{% url 'subcategory_list' category.id %}">
+                        <button class="secondary">See All Sub-Categories</button></a>                    {%endif%}
+                </div>
+                <div class="category-img">{% if category.image %}<img src="{{ category.image.url}}" alt="microsoft">{% else %} {% endif %}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+        {% include 'base/about.html' %}
+
+    {% include 'base/services.html' %}
+
+
+    {% include 'base/footer.html' %}
+
+{% endblock content %}

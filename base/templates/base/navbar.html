@@ -1,0 +1,131 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Banner-->
+<div class="top-banner">
+    <img src="{% static 'assets/topbar1.png' %}" alt="img1">
+    Get 20% off your first purchase
+    <img src="{% static 'assets/topbar2.png' %}" alt="img2">
+</div>
+<!--Top-bar-->
+<div class="web_size">
+    <nav>
+        <div class="topbar">
+            <img src="{% static 'assets/topuplogo.png' %}" alt="logo">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about-us' %}">About Us</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="search-container">
+                <div class="catalog-dropdown">
+                    <button class="catalog-btn" id="catalogBtn">
+                        <img src=".{% static 'assets/icons/burger.svg' %}" alt="burger"> CATALOG
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        {% for category in categories %}
+                        <a href="#">{{ category.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Mobile Hamburger Sidebar -->
+                <div class="mobile-header">
+                    <img src="{% static 'assets/topuplogo.png' %}" alt="Logo" class="mobile-logo">
+                    <button class="hamburger" id="hamburgerBtn">
+                        <img src="{% static 'assets/icons/Burger.png' %}" alt="Menu">
+                    </button>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <div class="sidebar" id="sidebar">
+                    <button class="close-btn" id="closeSidebar">×</button>
+                    <div class="sidebar-links">
+                        {% for category in categories %}
+                        <a href="#">{{ category.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." class="search-input" />
+                    <button class="search-icon"><img src="{% static 'assets/icons/search.svg' %}"
+                            alt="Search" /></button>
+                </div>
+
+                <div class="contact">
+                    <strong>+961(71) 877 772</strong>
+                    <small>+961(11) 877 772</small>
+                </div>
+            </div>
+
+            <div class="right-section">
+
+                <div class="nav-icons">
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}"><img src="{% static 'assets/icons/profile.png' %}" alt="Login" />
+                        Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}"><img src="{% static 'assets/icons/profile.png' %}" alt="Login" />
+                        Login</a>
+                    {% endif %}
+                    <div class="cart-dropdown-wrapper">
+                        <a href="javascript:void(0);" id="cart-toggle">
+                            <img src="{% static 'assets/icons/Cart.png' %}" alt="Cart" /> Shop Cart
+                        </a>
+                        <!--Cart dropdown Toggle-->
+                        <div class="cart-container cart-dropdown hidden" id="cart-dropdown">
+                            <div class="cart-items">
+                                <div class="cart-item">
+                                    <div class="item-img">
+                                    </div>
+                                    <div class="item-details">
+                                        <p class="item-title">Windows 10 Professional EN x32/x64</p>
+                                        <p class="item-price">418.20 $</p>
+                                    </div>
+                                    <button class="remove-btn">Remove</button>
+                                </div>
+
+                                <div class="cart-item">
+                                    <div class="item-img">
+                                    </div>
+                                    <div class="item-details">
+                                        <p class="item-title">Windows 10 Professional EN x32/x64</p>
+                                        <p class="item-price">418.20 $</p>
+                                    </div>
+                                    <button class="remove-btn">Remove</button>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="cart-summary">
+                                <div class="total-summary">
+                                    <span class="total-label">Total:</span>
+                                    <span class="total-price">18.12 $</span>
+                                </div>
+                                <button class="clear-btn">Clear Cart</button>
+                            </div>
+                            <button class="checkout-btn">Checkout</button>
+                        </div>
+                    </div>
+                    <!--Cart dropdown Toggle End-->
+                </div>
+            </div>
+        </div>
+        <nav class="category-links">
+            {% for category in categories %}
+            <a href="{% url 'subcategory_list' category.id %}">{{ category.name }}</a>
+            {% endfor %}
+        </nav>
+    </nav>
+</div>
+
+<script src="{% static 'script/script.js' %}"></script>
+
+{% endblock content %}

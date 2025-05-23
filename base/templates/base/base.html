@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topup LB</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+{% block content %}
+
+{% endblock content %}
+<div id="toast-container" class="toast-container">
+  {% if messages %}
+    {% for message in messages %}
+      <div class="toast {% if message.tags %}{{ message.tags }}{% endif %}">
+        {% if message.tags == 'success' %}
+          <svg class="toast-icon success-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        {% elif message.tags == 'error' or message.tags == 'danger' %}
+          <svg class="toast-icon error-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        {% endif %}
+        <span class="toast-message">{{ message }}</span>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+</html>
+<script>
+  // Auto-remove toast after 4 seconds
+  setTimeout(() => {
+    document.querySelectorAll('.toast').forEach(toast => {
+      toast.remove();
+    });
+  }, 2000);
+</script>
+<script>
+    const catalogBtn = document.getElementById('catalogBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+  
+    catalogBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('show');
+    });
+  
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('show');
+    });
+  
+    window.addEventListener('scroll', () => {
+      dropdownMenu.classList.remove('show');
+    });
+  </script>
+  
