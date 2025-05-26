@@ -36,3 +36,30 @@ def login(request):
             messages.error(request, "Incorrect password.")
             return redirect('login')
     return render(request, 'login.html')
+
+
+def register(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        password = request.POST.get('password')
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'This email is already exists')
+            return redirect('sign-up')
+        
+        if User.objects.filter(phone=phone).exists():
+            messages.error(request, 'This phone number is already in use')
+            return redirect('sign-up')
+        
+        user = User.objects.create(
+            email=email, 
+            phone=phone,
+        )
+
+        if password:
+            user.set_password(password)
+
+        messages.success(request, "User Registered Successfully")
+
+    return render(request, '')

@@ -7,6 +7,7 @@ urlpatterns = [
     path('login', login, name='login'),
     path('logout', logout_view, name='logout'),
     path('', include('subcategory.urls')),
+    path('register', register, name='register'),
     path('', include('category.urls')),
     # path('', include('products.urls')),
 ]

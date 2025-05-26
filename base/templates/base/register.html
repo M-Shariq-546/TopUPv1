@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/login.css'%}">
     <link rel="stylesheet" href="{% static 'css/main.css'%}">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
     <div class="login-container">
         <div class="login-left">
             <div class="login-details">
                 <img src="{% static 'assets/topuplogo.png'%}" alt="logo" class="logo">
-                <form method='POST', action="{% url 'login'%}">
+                <form method='POST', action="{% url 'register'%}">
                 {% csrf_token %}    
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Enter your email address" required>
@@ -31,11 +31,13 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter password" required>
                 <div class="register">
-                    <div class="check"> <input type="checkbox" name="checkbox" id="checkbox" placeholder="Remember me" checked>
-                    <span>Remember me</span></div>
-                    <a href="#">Forgot your password?</a>
+                    <div class="check">
+                         {% comment %} <input type="checkbox" name="checkbox" id="checkbox" placeholder="Remember me" checked> {% endcomment %}
+                    <span><br></span>
                 </div>
-                <button class="primary" type="submit">Login</button>
+                    {% comment %} <a href="#">Forgot your password?</a> {% endcomment %}
+                </div>
+                <button class="primary" type="submit">Register</button>
             </form>
                  <span>------or login with-----</span>
                  <button class="secondary">
@@ -43,7 +45,7 @@
                     Sign up with Google</button>
 
                  <div class="register">
-                    <span>Don't have an account <a href="{% url 'register' %}">Register here</a></span>
+                    <span>Already have an account <a href="{% url 'login' %}">Login here</a></span>
                  </div>
 
             </div>
