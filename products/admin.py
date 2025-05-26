@@ -1,6 +1,6 @@
 from import_export import resources, fields, widgets
 from import_export.admin import ImportExportModelAdmin
-from .models import Products
+from .models import Products, CartItem
 from django.contrib import admin
 
 class ProductResource(resources.ModelResource):
@@ -20,3 +20,5 @@ class ProductResource(resources.ModelResource):
 @admin.register(Products)
 class ProductAdmin(ImportExportModelAdmin):
     resource_class = ProductResource
+
+admin.site.register(CartItem)
