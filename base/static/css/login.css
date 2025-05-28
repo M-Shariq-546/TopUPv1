@@ -42,9 +42,10 @@
   gap: 12px;
 }
 
-.login-details .register .check {
+.register .check {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .login-details .logo img {
@@ -55,11 +56,14 @@
 
 .login-details label {
   font-size: 16px;
+  margin-top: 14px;
   color: #002046;
 }
 
 .login-details input {
   padding: 0.75rem;
+  margin-top: 12px;
+  margin-bottom: 10px;
   border-radius: 10px;
   border: 1px solid #DDDDE1;
   font-size: 1rem;
@@ -68,6 +72,7 @@
 
 label {
   font-weight: 500;
+  margin-top: 10px;
 }
 
 input[type="email"],

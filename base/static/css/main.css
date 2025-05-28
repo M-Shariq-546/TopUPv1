@@ -314,11 +314,15 @@ margin: 0 8px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 15px;
 }
 .hero-container .heading{
     font-size: 60px;
     text-align: center;
+}
+.hero-container p{
+  text-align: center;
 }
 .hero-container .hero-btn,
 .about-us .description .about-detail .hero-btn{

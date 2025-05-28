@@ -23,9 +23,10 @@
   flex-direction: column;
   gap: 0.5rem;
   }
-  .login-details .register .check{
+.register .check{
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .login-details .logo{
     width: 120px;
