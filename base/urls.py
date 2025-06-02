@@ -11,7 +11,7 @@ urlpatterns = [
     path('', include('category.urls')),
     path('reset-password', reset_password, name='reset_password_sending'),
     path('reset-password-confirm/', reset_password_confirm, name='reset-password-confirm'),
-    path('', include('products.urls')),
+    # path('', include('products.urls')),
 ]
 
 
