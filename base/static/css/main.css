@@ -389,8 +389,8 @@ margin: 0 8px;
     padding: 14px;
 }
 .categories-container .main-wrapper .product-card img{
-    width: 244px;
-    height: 137px;
+    width: 100%;
+    height: auto;
 }
 .categories-container .main-wrapper .product-card .product-type{
    display: flex;
